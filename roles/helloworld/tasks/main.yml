@@ -1,0 +1,11 @@
+---
+# tasks file for helloworld
+- name: Copying the helloworld server file
+  copy:
+    src: helloworld.js
+    dest: /home/ubuntu/
+    owner: ubuntu
+    group: ubuntu
+    mode: 0644
+- name: Starting helloworld server
+  shell: pm2 start -f /home/ubuntu/helloworld.js
